@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-exercice2',
   templateUrl: './exercice2.component.html',
   styleUrls: ['./exercice2.component.css']
 })
-export class Exercice2Component implements OnInit {
-  public valeur: string;
+export class Exercice2Component{
 
-  constructor() { }
+  @ViewChild('myInputText', {static : true}) inputValue: ElementRef<HTMLInputElement>
+  public valeur: string = ""
 
-  ngOnInit() {
+  constructor() {}
+
+  getValue() {
+    this.valeur = this.inputValue.nativeElement.value;
   }
-
 }

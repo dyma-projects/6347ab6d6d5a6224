@@ -10,5 +10,14 @@ export class Exercice1Component implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() { }
+  
+  addResultToParent(number: number) {
+   return this.result++
+  }
+
+  removeResultToParent(number: number) {
+    return this.result--
+   }
+
 }
